@@ -10,7 +10,7 @@ Neste repositório, serão adicionados todos os arquivos das atividades realizad
 ## Índice
 
 - [Aula 1](/Aula1/pagina-formulario.html)
-- [Aula 2](#aula2)
+- [Aula 2](/Aula2/HTMLBasico.html)
 
 ## Instalação
 Passos para instalar e configurar o projeto:
