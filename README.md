@@ -11,7 +11,8 @@ Neste repositório, serão adicionados todos os arquivos das atividades realizad
 
 - [Aula 1](/Aula1/pagina-formulario.html)
 - [Aula 2 - HTML Básico](/Aula2/HTMLBasico.html)
-- [Aula 2 - HTML Básico](/Aula2/Biografia.html)
+- [Aula 2 - HTML Biografia](/Aula2/Biografia.html)
+- [Aula 3 - Tabela](/Aula3/Tabela.html)
 
 ## Instalação
 Passos para instalar e configurar o projeto:
