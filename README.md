@@ -1,11 +1,11 @@
-# Programa-o-WEB-I---2025
+# Programacao WEB I 2025 - Turma 29
 Repositório Desenvolvimento WEB I - UNIDAVI 2025
 # UNIDAVI - Desenvolvimento Web 2025
 
 ![Imagem ou GIF opcional do projeto]
 
 ## Descrição
-Neste repositório, serão adicionados todos os arquivos das atividades realizadas na disciplina de Desenvolvimento Web 1.
+Neste repositório, serão adicionados todos os arquivos das atividades realizadas na disciplina de Desenvolvimento Web 1 (2025) .
 
 ## Índice
 
