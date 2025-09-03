@@ -1,0 +1,109 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffb6c1; /* Rosa claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    background: #ff69b4; /* Rosa mais forte */
+    color: white;
+    padding: 25px;
+    border-bottom: 4px solid #e75480;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 1.2rem;
+}
+
+
+nav {
+    background: #e75480;
+    text-align: center;
+    padding: 12px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 18px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: white;
+    color: #e75480;
+}
+
+main {
+    padding: 25px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+img {
+    border-radius: 12px;
+    transition: transform 0.3s;
+    max-width: 100%;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+aside {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #ffe4e1;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+video, audio {
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    background: #ff69b4;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-top: 4px solid #e75480;
+}
