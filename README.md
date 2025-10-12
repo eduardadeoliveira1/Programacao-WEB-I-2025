@@ -16,6 +16,8 @@ Neste repositório, serão adicionados todos os arquivos das atividades realizad
 - [Aula 3 - Formulário](/Aula3/Formulario.html)
 - [Aula 4 - CSS](/Aula4)
 - [Aula 5 - JavaScript](/Aula5)
+- [Aula 6 - PROVA]
+- [Aula 7 - Praticas - PHP](/Aula7)
 - [Aula 8 - Exercicios - PHP](/Aula8)
 
 ## Instalação
