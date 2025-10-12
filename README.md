@@ -18,7 +18,8 @@ Neste repositório, serão adicionados todos os arquivos das atividades realizad
 - [Aula 5 - JavaScript](/Aula5)
 - [Aula 6 - PROVA]
 - [Aula 7 - Praticas - PHP](/Aula7)
-- [Aula 8 - Exercicios - PHP](/Aula8)
+- [Aula 8 - Exercicios (PROVA)- PHP](/Aula8)
+- [Aula 10 - Praticas 3 - PHP](/Aula10)
 
 ## Instalação
 Passos para instalar e configurar o projeto:
@@ -27,3 +28,6 @@ Passos para instalar e configurar o projeto:
 git clone https://...../.git
 cd projeto
 npm install
+
+
+[def]: /Aula9
