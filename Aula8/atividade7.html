@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 7 - Financiamento da Mariazinha</title>
+    <link rel="stylesheet" href="ArquivoLayout.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Atividade 7 - Financiamento da Mariazinha</h2>
+        <form action="atividade7.php" method="post">
+            <p>Informe os dados do financiamento:</p>
+
+            <label>Valor do carro à vista (R$):</label>
+            <input type="number" name="valor_vista" step="0.01" required><br><br>
+
+            <label>Valor da parcela (R$):</label>
+            <input type="number" name="valor_parcela" step="0.01" required><br><br>
+
+            <label>Quantidade de parcelas:</label>
+            <input type="number" name="qtd_parcelas" required><br><br>
+
+            <input type="submit" value="Calcular Juros">
+        </form>
+    </div>
+</body>
+</html>

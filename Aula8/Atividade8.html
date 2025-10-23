@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 8 - Financiamento da Moto</title>
+    <link rel="stylesheet" href="ArquivoLayout.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Atividade 8 - Financiamento da Moto</h2>
+        <form action="atividade8.php" method="post">
+            <p>Valor da moto à vista: R$ 8.654,00</p>
+            <p>Selecione o número de parcelas:</p>
+
+            <select name="parcelas" required>
+                <option value="">Selecione...</option>
+                <option value="24">24 vezes (1,5%)</option>
+                <option value="36">36 vezes (2,0%)</option>
+                <option value="48">48 vezes (2,5%)</option>
+                <option value="60">60 vezes (3,0%)</option>
+            </select>
+            <br><br>
+
+            <input type="submit" value="Calcular Parcelas">
+        </form>
+    </div>
+</body>
+</html>

@@ -8,23 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $altura = $_POST["altura"];
     $area = calcularAreaTriangulo($base, $altura);
     $frase = "A área do triângulo retângulo com base $base m e altura $altura m é $area metros quadrados.";
+
+    // Redireciona para a página de resultado, passando a frase pela URL
+    header("Location: Atividade5-pt2.php?frase=" . urlencode($frase));
+    exit;
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Resultado da Área</title>
-    <link rel="stylesheet" href="ArquivoLayout.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Resultado</h2>
-        <p style="color:#ff69b4; font-size:20px;">
-            <?= $frase ?>
-        </p>
-        <a href="Atividade5.html" class="voltar">⬅ Voltar</a>
-    </div>
-</body>
-</html>

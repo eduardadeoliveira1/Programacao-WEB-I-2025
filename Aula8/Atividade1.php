@@ -22,24 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $soma = calcularSoma($v1, $v2, $v3);
     $cor = definirCor($v1, $v2, $v3);
+
+    header("Location: Atividade1-pt2.php?soma=$soma&cor=$cor");
+    exit;
 }
 ?>
 
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Resultado da Soma</title>
-    <link rel="stylesheet" href="ArquivoLayout.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Resultado da Soma</h2>
-        <p style="color: <?= $cor ?>; font-size: 20px;">
-            O resultado da soma é: <?= $soma ?>
-        </p>
-        <a href="Atividade1.html" class="voltar">⬅ Voltar</a>
-    </div>
-</body>
-</html>
