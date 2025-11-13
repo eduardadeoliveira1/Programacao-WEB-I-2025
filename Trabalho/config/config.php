@@ -21,7 +21,7 @@ define('DB_HOST', 'localhost');
 define('DB_PORT', '5432');
 define('DB_NAME', 'sistema_avaliacao'); // nome do seu banco
 define('DB_USER', 'postgres');
-define('DB_PASS', 'Dudaduda01#'); // senha do PostgreSQL
+define('DB_PASS', 'sua_senha_aqui'); // senha do PostgreSQL
 
 // ==================== INCLUSÕES PADRÃO ====================
 

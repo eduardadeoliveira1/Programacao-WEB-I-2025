@@ -81,3 +81,63 @@ Trabalho
 - `setores` – setores da pousada (ex: recepção, limpeza, cozinha)  
 - `dispositivo` – tablets cadastrados  
 - `respostas` – respostas das perguntas
+
+## Pré-requisitos
+
+Antes de executar o projeto, certifique-se de ter instalado:
+
+- **PHP 8.0 ou superior**
+- **PostgreSQL 12 ou superior**
+- **Servidor web** (Apache)
+
+### 1. Clonar ou Baixar o Repositório
+```bash
+git clone 
+cd Trabalho
+```
+
+### 2. Configurar o Banco de Dados
+
+#### 2.1. Criar o Banco de Dados
+
+Acesse o PostgreSQL e crie database sistema_avaliacao;
+Execute o script SQL localizado na pasta `sql/`
+
+#### 2.3 Configurar a Conexão com o Banco
+
+Edite o arquivo `config/database.php` com suas credenciais do PostgreSQL:
+```php
+<?php
+define('DB_HOST', 'localhost');
+define('DB_PORT', '5432');
+define('DB_NAME', 'pousada_avaliacao');
+define('DB_USER', 'postgres');
+define('DB_PASS', 'sua_senha_aqui');
+```
+
+### 3. Acessar o Sistema
+
+#### Área Pública (Avaliação de Clientes)
+```
+http://localhost/Trabalho/public/?dispositivo=dispositivo_vinculado_banco
+```
+#### Painel Administrativo
+```
+http://localhost:8000/admin/login.php
+```
+
+**Credenciais padrão** :
+- **Usuário:** `admin`
+- **Senha:** `password`
+
+## Contato
+
+Para dúvidas sobre a execução do projeto, entre em contato:
+- **Email:** [eduarda.oliveira@unidavi.edu.com]
+
+---
+
+**Desenvolvido como trabalho acadêmico de Programação Web II**  
+**Instituição:** Unidavi  
+**Curso:** Sistemas de Informação
+**Semestre/Ano:** 04/2025
