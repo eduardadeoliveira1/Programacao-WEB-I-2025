@@ -1,5 +1,5 @@
 
-TRABALHO DE PROGRAÇÃO WEB II - AVALIAÇÃO DE SATISFAÇÃO 
+##  TRABALHO DE PROGRAÇÃO WEB II - AVALIAÇÃO DE SATISFAÇÃO 
 
 Este sistema permite que clientes realizem **avaliações de atendimento e serviços** da Pousada do Sol, com um **painel administrativo** para gerenciar perguntas e feedbacks.
 
@@ -82,13 +82,6 @@ Trabalho
 - `dispositivo` – tablets cadastrados  
 - `respostas` – respostas das perguntas
 
-## Pré-requisitos
-
-Antes de executar o projeto, certifique-se de ter instalado:
-
-- **PHP 8.0 ou superior**
-- **PostgreSQL 12 ou superior**
-- **Servidor web** (Apache)
 
 ### 1. Clonar ou Baixar o Repositório
 ```bash
@@ -101,7 +94,7 @@ cd Trabalho
 #### 2.1. Criar o Banco de Dados
 
 Acesse o PostgreSQL e crie database sistema_avaliacao;
-Execute o script SQL localizado na pasta `sql/`
+Execute o script SQL localizado na pasta `sql/` dentro do databse  **sistema_avalicao**.
 
 #### 2.3 Configurar a Conexão com o Banco
 
