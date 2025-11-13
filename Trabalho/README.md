@@ -12,7 +12,7 @@ Este sistema permite que clientes realizem **avaliações de atendimento e servi
 - Logout com expiração automática de sessão
 
 ###  Área de Avaliação
-- Acesso por dispositivos registrados (como totens, tablets e recepções)
+- Acesso por dispositivos registrados (tablets)
 - Avaliações anônimas e seguras
 - Perguntas dinâmicas configuráveis pelo painel admin
 

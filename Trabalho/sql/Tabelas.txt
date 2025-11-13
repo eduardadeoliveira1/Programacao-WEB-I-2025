@@ -77,3 +77,49 @@ CREATE TABLE respostas (
         FOREIGN KEY (id_pergunta) REFERENCES perguntas(id_pergunta)
         ON DELETE CASCADE
 );
+
+
+INSERT INTO setores (nome_setor, descricao) VALUES
+('Recepção', 'Atendimento e suporte aos hóspedes'),
+('Restaurante', 'Serviço de alimentação e bebidas'),
+('Piscina', 'Área de lazer e bar da piscina'),
+('Limpeza', 'Serviço de arrumação dos quartos'),
+('Manutenção', 'Serviços técnicos e reparos');
+
+INSERT INTO dispositivo (nome_dispositivo, id_setor, identificador_unico)
+VALUES
+('Tablet Recepção', 1, 'tablet-recepcao-001'),
+('Tablet Restaurante', 2, 'tablet-restaurante-001'),
+('Tablet Piscina', 3, 'tablet-piscina-001'),
+('Tablet Limpeza', 4, 'tablet-limpeza-001'),
+('Tablet Manutenção', 5, 'tablet-manutencao-001');
+
+-- USUÁRIO ADMIN (login: admin / senha: admin)
+INSERT INTO usuarios_admin (login, senha, nome_completo, email, status)
+VALUES (
+    'admin',
+    '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', -- hash da senha "admin"
+    'Administrador do Sistema',
+    'admin@pousadadosol.com',
+    TRUE
+);
+
+INSERT INTO perguntas (texto_pergunta, tipo_resposta, ordem_exibicao, obrigatoria) VALUES
+('Como você avalia o atendimento da recepção?', 'escala_0_10', 1, TRUE),
+('A limpeza do quarto atendeu suas expectativas?', 'escala_0_10', 2, TRUE),
+('Como você avalia a qualidade das refeições no restaurante?', 'escala_0_10', 3, TRUE),
+('Você recomendaria a Pousada do Sol para amigos e familiares?', 'escala_0_10', 4, FALSE),
+
+INSERT INTO avaliacoes (id_setor, id_dispositivo, sessao_hash, feedback_textual)
+VALUES (2, 2, 'sessao-demo-001', 'Comida excelente e atendimento muito atencioso!');
+
+INSERT INTO respostas (id_avaliacao, id_pergunta, resposta_numerica)
+VALUES
+(1, 1, 9.0),
+(1, 2, 10.0),
+(1, 3, 9.5),
+(1, 4, 10.0);
+
+INSERT INTO respostas (id_avaliacao, id_pergunta, resposta_texto)
+VALUES (1, 5, 'Ambiente muito agradável, voltarei em breve 🌞');
+

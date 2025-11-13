@@ -1,7 +1,7 @@
 <?php
 /**
  * Funções de Banco de Dados
- * Sistema de Avaliação de Qualidade
+ * Sistema de Avaliação de Qualidade - Pousada do Sol 🌿
  */
 
 // ==================== PERGUNTAS ====================
@@ -15,7 +15,7 @@ function getPerguntasAtivas() {
     $stmt = $pdo->prepare("
         SELECT id_pergunta, texto_pergunta, tipo_resposta, ordem_exibicao, obrigatoria
         FROM perguntas
-        WHERE status = 'ativa'
+        WHERE status = TRUE
         ORDER BY ordem_exibicao ASC
     ");
     $stmt->execute();
@@ -31,7 +31,7 @@ function inserirPergunta($dados) {
     $pdo = getDBConnection();
     $stmt = $pdo->prepare("
         INSERT INTO perguntas (texto_pergunta, tipo_resposta, ordem_exibicao, obrigatoria, status)
-        VALUES (:texto, :tipo, :ordem, :obrigatoria, :status)
+        VALUES (:texto, :tipo, :ordem, :obrigatoria, TRUE)
         RETURNING id_pergunta
     ");
     
@@ -39,8 +39,7 @@ function inserirPergunta($dados) {
         'texto' => sanitizeText($dados['texto_pergunta']),
         'tipo' => $dados['tipo_resposta'],
         'ordem' => sanitizeInt($dados['ordem_exibicao']),
-        'obrigatoria' => $dados['obrigatoria'] ? 't' : 'f',
-        'status' => 'ativa'
+        'obrigatoria' => $dados['obrigatoria'] ? TRUE : FALSE
     ]);
     
     return $stmt->fetchColumn();
@@ -69,14 +68,14 @@ function atualizarPergunta($id, $dados) {
         'texto' => sanitizeText($dados['texto_pergunta']),
         'tipo' => $dados['tipo_resposta'],
         'ordem' => sanitizeInt($dados['ordem_exibicao']),
-        'obrigatoria' => $dados['obrigatoria'] ? 't' : 'f'
+        'obrigatoria' => $dados['obrigatoria'] ? TRUE : FALSE
     ]);
 }
 
 /**
  * Altera status da pergunta
  * @param int $id ID da pergunta
- * @param string $status Novo status
+ * @param bool $status Novo status (TRUE/FALSE)
  * @return bool True se sucesso
  */
 function alterarStatusPergunta($id, $status) {
@@ -84,7 +83,7 @@ function alterarStatusPergunta($id, $status) {
     $stmt = $pdo->prepare("
         UPDATE perguntas SET status = :status WHERE id_pergunta = :id
     ");
-    return $stmt->execute(['id' => sanitizeInt($id), 'status' => $status]);
+    return $stmt->execute(['id' => sanitizeInt($id), 'status' => $status ? TRUE : FALSE]);
 }
 
 // ==================== DISPOSITIVOS ====================
@@ -112,7 +111,8 @@ function getDispositivos() {
 function getDispositivoPorIdentificador($identificador) {
     $pdo = getDBConnection();
     $stmt = $pdo->prepare("
-        SELECT * FROM dispositivo WHERE identificador_unico = :id AND status = 'ativo'
+        SELECT * FROM dispositivo 
+        WHERE identificador_unico = :id AND status = TRUE
     ");
     $stmt->execute(['id' => sanitizeString($identificador)]);
     return $stmt->fetch();
@@ -127,15 +127,14 @@ function inserirDispositivo($dados) {
     $pdo = getDBConnection();
     $stmt = $pdo->prepare("
         INSERT INTO dispositivo (nome_dispositivo, id_setor, identificador_unico, status)
-        VALUES (:nome, :setor, :identificador, :status)
+        VALUES (:nome, :setor, :identificador, TRUE)
         RETURNING id_dispositivo
     ");
     
     $stmt->execute([
         'nome' => sanitizeString($dados['nome_dispositivo']),
         'setor' => sanitizeInt($dados['id_setor']),
-        'identificador' => sanitizeString($dados['identificador_unico']),
-        'status' => 'ativo'
+        'identificador' => sanitizeString($dados['identificador_unico'])
     ]);
     
     return $stmt->fetchColumn();
@@ -150,7 +149,7 @@ function inserirDispositivo($dados) {
 function getSetoresAtivos() {
     $pdo = getDBConnection();
     $stmt = $pdo->query("
-        SELECT * FROM setores WHERE status = 'ativo' ORDER BY nome_setor
+        SELECT * FROM setores WHERE status = TRUE ORDER BY nome_setor
     ");
     return $stmt->fetchAll();
 }
@@ -164,14 +163,13 @@ function inserirSetor($dados) {
     $pdo = getDBConnection();
     $stmt = $pdo->prepare("
         INSERT INTO setores (nome_setor, descricao, status)
-        VALUES (:nome, :descricao, :status)
+        VALUES (:nome, :descricao, TRUE)
         RETURNING id_setor
     ");
     
     $stmt->execute([
         'nome' => sanitizeString($dados['nome_setor']),
-        'descricao' => sanitizeText($dados['descricao']),
-        'status' => 'ativo'
+        'descricao' => sanitizeText($dados['descricao'])
     ]);
     
     return $stmt->fetchColumn();
