@@ -1,0 +1,79 @@
+
+CREATE TABLE usuarios_admin (
+    id_usuario SERIAL PRIMARY KEY,
+    login VARCHAR(50) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    nome_completo VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ultimo_acesso TIMESTAMP,
+    status BOOLEAN DEFAULT TRUE,
+    precisa_mudar_senha BOOLEAN DEFAULT FALSE
+);
+
+
+CREATE TABLE setores (
+    id_setor SERIAL PRIMARY KEY,
+    nome_setor VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    status BOOLEAN DEFAULT TRUE,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE dispositivo (
+    id_dispositivo SERIAL PRIMARY KEY,
+    nome_dispositivo VARCHAR(100) NOT NULL,
+    id_setor INT NOT NULL,
+    identificador_unico VARCHAR(100) UNIQUE NOT NULL,
+    status BOOLEAN DEFAULT TRUE,
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ultima_avaliacao TIMESTAMP,
+    CONSTRAINT fk_dispositivo_setor
+        FOREIGN KEY (id_setor) REFERENCES setores(id_setor)
+        ON DELETE CASCADE
+);
+
+
+CREATE TABLE perguntas (
+    id_pergunta SERIAL PRIMARY KEY,
+    texto_pergunta TEXT NOT NULL,
+    tipo_resposta VARCHAR(50) NOT NULL, -- Ex: 'numerica', 'texto', 'sim_nao', etc.
+    ordem_exibicao INT,
+    obrigatoria BOOLEAN DEFAULT FALSE,
+    status BOOLEAN DEFAULT TRUE,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    data_atualizacao TIMESTAMP
+);
+
+
+CREATE TABLE avaliacoes (
+    id_avaliacao SERIAL PRIMARY KEY,
+    id_setor INT NOT NULL,
+    id_dispositivo INT NOT NULL,
+    data_hora_avaliacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    feedback_textual TEXT,
+    sessao_hash VARCHAR(100) UNIQUE NOT NULL,
+    CONSTRAINT fk_avaliacoes_setor
+        FOREIGN KEY (id_setor) REFERENCES setores(id_setor)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_avaliacoes_dispositivo
+        FOREIGN KEY (id_dispositivo) REFERENCES dispositivo(id_dispositivo)
+        ON DELETE CASCADE
+);
+
+
+CREATE TABLE respostas (
+    id_resposta SERIAL PRIMARY KEY,
+    id_avaliacao INT NOT NULL,
+    id_pergunta INT NOT NULL,
+    resposta_numerica NUMERIC(5,2),
+    resposta_texto TEXT,
+    data_hora_resposta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_respostas_avaliacao
+        FOREIGN KEY (id_avaliacao) REFERENCES avaliacoes(id_avaliacao)
+        ON DELETE CASCADE,
+    CONSTRAINT fk_respostas_pergunta
+        FOREIGN KEY (id_pergunta) REFERENCES perguntas(id_pergunta)
+        ON DELETE CASCADE
+);

@@ -1,0 +1,255 @@
+/**
+ * Estilos do Formulário de Avaliação - Tema Pousada
+ * Visual leve e acolhedor
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #3b8c66;          /* Verde principal */
+    --primary-hover: #317a59;          /* Verde mais escuro */
+    --success-color: #2ecc71;          /* Verde sucesso */
+    --error-color: #e74c3c;            /* Vermelho para erros */
+    --text-color: #1f2937;             /* Cinza escuro */
+    --text-light: #6b7280;             /* Cinza claro */
+    --bg-color: #f5f9f6;               /* Fundo leve com tom de verde */
+    --white: #ffffff;
+    --border-color: #d1e3db;           /* Verde clarinho para bordas */
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #b8e1c7 0%, #e6f4ec 100%);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* === CONTAINER === */
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* === HEADER === */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #4ac79b 100%);
+    color: var(--white);
+    padding: 60px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Centraliza verticalmente */
+}
+
+.header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.header .subtitle {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Logo opcional */
+.header img.logo {
+    width: 100px;
+    height: 100px;
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+.main-content {
+    padding: 40px 30px;
+}
+
+/* === PERGUNTAS === */
+.perguntas-container {
+    margin-bottom: 30px;
+}
+
+.pergunta-item {
+    background: var(--bg-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.pergunta-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.pergunta-texto {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.required {
+    color: var(--error-color);
+    margin-left: 4px;
+}
+
+/* === ESCALAS === */
+.escala-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.escala-opcoes {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.escala-value {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.escala-value:hover {
+    background: var(--primary-hover);
+    color: var(--white);
+    transform: scale(1.05);
+    border-color: var(--primary-hover);
+}
+
+.escala-option.selected .escala-value {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* === FEEDBACK === */
+.feedback-section {
+    background: var(--bg-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.feedback-section label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.feedback-section textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    background: var(--white);
+}
+
+.feedback-section textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* === BOTÕES === */
+.btn-submit,
+.btn-nova-avaliacao {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #4ac79b 100%);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(59, 140, 102, 0.3);
+}
+
+.btn-submit:hover,
+.btn-nova-avaliacao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(59, 140, 102, 0.4);
+}
+
+/* === MENSAGENS === */
+.mensagem.success {
+    background: #d9f8e8;
+    color: #0f5132;
+    border: 1px solid var(--success-color);
+}
+
+.mensagem.error {
+    background: #fce4e4;
+    color: #991b1b;
+    border: 1px solid var(--error-color);
+}
+
+/* === RODAPÉ === */
+.footer {
+    background: #f1f8f4;
+    padding: 20px 30px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: #5e766b;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    .header {
+        min-height: 50vh;
+        padding: 40px 20px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .main-content {
+        padding: 30px 20px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 16px 0;
+    }
+}

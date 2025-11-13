@@ -1,0 +1,321 @@
+/**
+ * Tema: Pousada do Sol 🌿
+ * Página: Gerenciar Perguntas
+ */
+
+/* Reset e Cores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --verde-claro: #b8e1c7;
+  --verde-escuro: #3b8c66;
+  --verde-hover: #317a59;
+  --bg-body: #f5f9f6;
+  --texto: #1f2937;
+  --texto-claro: #6b7280;
+  --branco: #ffffff;
+  --borda: #d1e3db;
+  --sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* Layout Geral */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #e9f6ef, #f9fafb);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #60b48e, #295a44);
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-header .logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.sidebar-header h2 {
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+}
+
+.sidebar-header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+
+.nav-item {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    padding: 12px 30px;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: var(--verde-hover);
+    color: var(--branco);
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-info {
+    margin-bottom: 15px;
+}
+
+.user-info strong {
+    display: block;
+}
+
+.user-info small {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-logout {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--branco);
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Conteúdo Principal */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  background: var(--bg-body);
+}
+
+/* Cabeçalho */
+.page-header {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  color: var(--verde-escuro);
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  color: var(--texto-claro);
+  font-size: 0.95rem;
+}
+
+/* Formulário */
+.form-card {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 8px var(--sombra);
+  margin-bottom: 30px;
+  border-left: 5px solid var(--verde-escuro);
+}
+
+.form-card h2 {
+  color: var(--verde-escuro);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--texto);
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: var(--verde-escuro);
+  outline: none;
+}
+
+/* Botões */
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-primary {
+  background: var(--verde-escuro);
+  color: var(--branco);
+}
+
+.btn-primary:hover {
+  background: var(--verde-hover);
+}
+
+.btn-edit {
+  background: #facc15;
+  color: #1f2937;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-edit:hover {
+  background: #eab308;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+/* Tabela */
+.section-card {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 8px var(--sombra);
+}
+
+.section-card h2 {
+  color: var(--verde-escuro);
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.perguntas-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.perguntas-table th,
+.perguntas-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--borda);
+  text-align: left;
+}
+
+.perguntas-table th {
+  color: var(--texto);
+  font-weight: 600;
+  background: #f1f7f3;
+}
+
+.perguntas-table tr:hover {
+  background: #f9fdfb;
+}
+
+.text-muted {
+  color: var(--texto-claro);
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Alertas */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background: #d1fae5;
+  color: #065f46;
+  border-left: 4px solid var(--verde-escuro);
+}
+
+.alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border-left: 4px solid #ef4444;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,145 @@
+/**
+ * Tema de Login - Pousada do Sol 🌿
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-claro: #b8e1c7;
+    --verde-escuro: #3b8c66;
+    --verde-hover: #317a59;
+    --bg-body: #f5f9f6;
+    --texto: #1f2937;
+    --texto-claro: #6b7280;
+    --branco: #ffffff;
+    --borda: #d1e3db;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #b8e1c7 0%, #e6f4ec 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: var(--branco);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    border: 1px solid var(--borda);
+}
+
+.login-header {
+    margin-bottom: 25px;
+}
+
+.login-header .logo {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid var(--verde-escuro);
+}
+
+.login-header h1 {
+    color: var(--verde-escuro);
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+}
+
+.login-header p {
+    color: var(--texto-claro);
+    font-size: 0.95rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--verde-escuro);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--verde-escuro);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background: var(--verde-hover);
+    transform: translateY(-2px);
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+
+.alert-success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--texto-claro);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    .login-header h1 {
+        font-size: 1.4rem;
+    }
+}
