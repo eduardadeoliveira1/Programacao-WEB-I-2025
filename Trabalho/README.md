@@ -112,7 +112,14 @@ define('DB_PASS', 'sua_senha_aqui');
 
 #### Área Pública (Avaliação de Clientes)
 ```
-http://localhost/Trabalho/public/?dispositivo=dispositivo_vinculado_banco
+http://localhost/Trabalho/public/?dispositivo=variavel_dispositivo
+
+Opções de dispositivos: 
+- tablet-piscina-001
+- tablet-limpeza-001
+- tablet-manutencao-001
+- tablet-restaurante-001
+- tablet-recepcao-001
 ```
 #### Painel Administrativo
 ```
