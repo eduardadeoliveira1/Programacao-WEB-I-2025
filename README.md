@@ -18,8 +18,16 @@ Neste repositório, serão adicionados todos os arquivos das atividades realizad
 - [Aula 5 - JavaScript](/Aula5)
 - [Aula 6 - PROVA]
 - [Aula 7 - Praticas - PHP](/Aula7)
-- [Aula 8 e 9 - Exercicios da PROVA e práticas- PHP](/Aula8)
+- [Aula 8 e 9 - Exercicios da PROVA e práticas- PHP](/Aula8e9)
 - [Aula 10 - Praticas 3 - PHP](/Aula10)
+- [Aula 11 - Praticas  - PHP](/Aula11)
+- [Aula 12 - PROVA]
+- [Aula 13 - Praticas  - PHP](/Aula13)
+- [Aula 14 - Praticas  - PHP](/Aula14)
+- [Aula 15 - Praticas  - PHP](/Aula15)
+- [Aula 16 - FERIADO]
+- [Aula 17 - FINALIZAR TRABALHO]
+- [Aula 18 - TRABALHO FINALIZADO](/Trabalho)
 
 ## Instalação
 Passos para instalar e configurar o projeto:
