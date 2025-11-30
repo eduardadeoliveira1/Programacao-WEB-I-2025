@@ -1,8 +1,4 @@
 <?php
-/**
- * Gerenciamento de Perguntas - Painel Administrativo
- * Tema: Pousada do Sol 🌿
- */
 require_once __DIR__ . '/../config/config.php';
 protectAdminPage();
 
@@ -12,7 +8,7 @@ $pdo = getDBConnection();
 $mensagem = '';
 $erro = '';
 
-// === INSERIR OU ATUALIZAR PERGUNTA ===
+// ATUALIZAR PERGUNTA
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id_pergunta'] ?? null;
     $texto = sanitizeString($_POST['texto_pergunta'] ?? '');
@@ -55,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// === EXCLUIR PERGUNTA ===
+// EXCLUIR PERGUNTA 
 if (isset($_GET['delete'])) {
     $id = (int) $_GET['delete'];
     try {
@@ -68,7 +64,7 @@ if (isset($_GET['delete'])) {
     }
 }
 
-// === BUSCAR PERGUNTAS ===
+// BUSCAR PERGUNTAS
 $stmt = $pdo->query("SELECT * FROM perguntas ORDER BY ordem_exibicao ASC");
 $perguntas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

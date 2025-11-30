@@ -1,8 +1,5 @@
 <?php
-/**
- * Página de Login Administrativa
- * Tema: Pousada do Sol 🌿
- */
+
 require_once __DIR__ . '/../config/config.php';
 
 // Se já está logado, redireciona para dashboard

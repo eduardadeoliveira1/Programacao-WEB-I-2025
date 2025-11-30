@@ -1,8 +1,4 @@
 <?php
-/**
- * Painel Administrativo - Página Inicial
- * Tema Pousada do Sol 🌿
- */
 require_once __DIR__ . '/../config/config.php';
 protectAdminPage();
 
